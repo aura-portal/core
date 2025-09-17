@@ -15,4 +15,4 @@ services:
       - run
       - dev
     volumes:
-      - ./app/module:/module
+      - ./app/module:/home/aura
