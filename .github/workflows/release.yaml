@@ -1,0 +1,23 @@
+---
+name: Release
+on:
+  release:
+    types:
+      - published
+permissions:
+  contents: read
+jobs:
+  versions:
+    uses: aura-portal/.github/.github/workflows/versions.yaml@main
+    with:
+      tag: ${{ github.ref_name }}
+  docker-release:
+    uses: aura-portal/.github/.github/workflows/docker-release.yaml@main
+    permissions:
+      contents: read
+      packages: write
+    needs: versions
+    with:
+      major: ${{ needs.versions.outputs.major }}
+      minor: ${{ needs.versions.outputs.minor }}
+      patch: ${{ needs.versions.outputs.patch }}

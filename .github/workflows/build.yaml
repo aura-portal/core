@@ -1,0 +1,13 @@
+---
+name: Build
+on:
+  push:
+    branches-ignore:
+      - main
+permissions:
+  contents: read
+jobs:
+  build:
+    uses: aura-portal/.github/.github/workflows/docker-build.yaml@main
+    permissions:
+      contents: read
