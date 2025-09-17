@@ -1,4 +1,18 @@
 ---
 services:
   proxy:
+    image: ghcr.io/aura-portal/proxy:v0
+    depends_on:
+      core:
+        condition: service_healthy
+    ports:
+      - 80:80
+  core:
     build: ./app
+    restart: on-failure
+    command:
+      - npm
+      - run
+      - dev
+    volumes:
+      - ./app/module:/module
