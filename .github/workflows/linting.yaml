@@ -15,5 +15,4 @@ jobs:
       statuses: write
       checks: write
     with:
-      command: npm ci
-      working-directory: ./app/module
+      command: npm ci && npm ci --prefix ./app/module
