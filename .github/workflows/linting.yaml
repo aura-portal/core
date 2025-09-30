@@ -15,4 +15,4 @@ jobs:
       statuses: write
       checks: write
     with:
-      command: npm ci --prefix ./app
+      command: npm install prettier-plugin-svelte --no-save && npm ci --prefix ./app
