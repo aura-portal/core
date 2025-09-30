@@ -1,8 +1,8 @@
 repository:
-  name: template
-  description: Aura portal template
-  homepage: https://github.com/aura-portal/template
-  topics: aura, aura-portal, template
+  name: core
+  description: Aura portal core
+  homepage: https://github.com/aura-portal/core
+  topics: aura, aura-portal, core
   private: false
   has_issues: false
   has_projects: false
