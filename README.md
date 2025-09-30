@@ -24,5 +24,6 @@ services:
 ## Development
 
 ```shell
+docker compose run --rm core npm ci
 docker compose up
 ```
