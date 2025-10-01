@@ -8,9 +8,9 @@ WORKDIR /home/aura/app
 
 FROM base AS builder
 
-COPY --chown=aura:aura ./app/package*.json ./
+COPY --chown=aura:aura ./app/package*.json ./app/svelte.config.js ./
 
-RUN npm ci
+RUN npm install
 
 COPY --chown=aura:aura ./app ./
 
